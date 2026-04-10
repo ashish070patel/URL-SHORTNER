@@ -1,24 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-        body{
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-</head>
-<body>
-    <h1>Login</h1>
-    <form action="/user/login" method="post">
-        <label>Email</label>
-        <input type="text" required name = "email">
-        <label>Password</label>
-        <input type="text" required name = "password">
 
-        <button type="submit">Login</button>
-    </form>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f7f6f3;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            border: 1px solid #e5e5e5;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c2c2c;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #555;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #dcdcdc;
+            background: #fafafa;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #4a90e2;
+            background: #fff;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            background: #4a90e2;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s ease;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #3a78c2;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 13px;
+            color: #777;
+        }
+
+        .footer a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+
+        <form action="/user/login" method="post">
+            <div>
+                <label>Email</label>
+                <input type="email" required name="email" placeholder="Enter your email">
+            </div>
+
+            <div>
+                <label>Password</label>
+                <input type="password" required name="password" placeholder="Enter your password">
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="footer">
+            Don't have an account? <a href="/signup">Sign up</a>
+        </div>
+    </div>
 </body>
-</html
+</html>
